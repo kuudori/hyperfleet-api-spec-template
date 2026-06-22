@@ -17,7 +17,7 @@ info:
     name: Apache 2.0
     url: 'https://www.apache.org/licenses/LICENSE-2.0'
   title: HyperFleet API
-  version: 1.0.23
+  version: 1.0.24
 host: hyperfleet.redhat.com
 basePath: /
 schemes:
@@ -41,14 +41,12 @@ paths:
         - default: 1
           format: int32
           in: query
-          minimum: 1
           name: page
           required: false
           type: integer
         - default: 20
           format: int32
           in: query
-          minimum: 1
           name: pageSize
           required: false
           type: integer
@@ -71,12 +69,10 @@ paths:
             $ref: '#/definitions/ChannelList'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -107,12 +103,10 @@ paths:
             $ref: '#/definitions/Channel'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -139,20 +133,14 @@ paths:
             $ref: '#/definitions/Channel'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         '404':
           description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         '409':
           description: The request conflicts with the current state of the server.
-          schema:
-            $ref: '#/definitions/ConflictDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -187,16 +175,12 @@ paths:
             $ref: '#/definitions/Channel'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         '404':
           description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -227,20 +211,14 @@ paths:
             $ref: '#/definitions/Channel'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         '404':
           description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         '409':
           description: The request conflicts with the current state of the server.
-          schema:
-            $ref: '#/definitions/ConflictDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -270,14 +248,12 @@ paths:
         - default: 1
           format: int32
           in: query
-          minimum: 1
           name: page
           required: false
           type: integer
         - default: 20
           format: int32
           in: query
-          minimum: 1
           name: pageSize
           required: false
           type: integer
@@ -300,12 +276,10 @@ paths:
             $ref: '#/definitions/VersionList'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -338,12 +312,10 @@ paths:
             $ref: '#/definitions/Version'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -374,20 +346,14 @@ paths:
             $ref: '#/definitions/Version'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         '404':
           description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         '409':
           description: The request conflicts with the current state of the server.
-          schema:
-            $ref: '#/definitions/ConflictDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -415,16 +381,12 @@ paths:
             $ref: '#/definitions/Version'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         '404':
           description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -459,20 +421,14 @@ paths:
             $ref: '#/definitions/Version'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         '404':
           description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         '409':
           description: The request conflicts with the current state of the server.
-          schema:
-            $ref: '#/definitions/ConflictDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -498,14 +454,12 @@ paths:
         - default: 1
           format: int32
           in: query
-          minimum: 1
           name: page
           required: false
           type: integer
         - default: 20
           format: int32
           in: query
-          minimum: 1
           name: pageSize
           required: false
           type: integer
@@ -528,16 +482,10 @@ paths:
             $ref: '#/definitions/ClusterList'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
-        '401':
-          description: The request requires valid authentication credentials.
-          schema:
-            $ref: '#/definitions/UnauthorizedDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -566,20 +514,10 @@ paths:
             $ref: '#/definitions/Cluster'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
-        '401':
-          description: The request requires valid authentication credentials.
-          schema:
-            $ref: '#/definitions/UnauthorizedDetails'
-        '409':
-          description: The request conflicts with the current state of the server.
-          schema:
-            $ref: '#/definitions/ConflictDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -692,20 +630,12 @@ paths:
             $ref: '#/definitions/Cluster'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
-        '401':
-          description: The request requires valid authentication credentials.
-          schema:
-            $ref: '#/definitions/UnauthorizedDetails'
         '404':
           description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -744,20 +674,10 @@ paths:
             $ref: '#/definitions/Cluster'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
-        '401':
-          description: The request requires valid authentication credentials.
-          schema:
-            $ref: '#/definitions/UnauthorizedDetails'
-        '404':
-          description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -789,24 +709,14 @@ paths:
             $ref: '#/definitions/Cluster'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
-        '401':
-          description: The request requires valid authentication credentials.
-          schema:
-            $ref: '#/definitions/UnauthorizedDetails'
         '404':
           description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         '409':
           description: The request conflicts with the current state of the server.
-          schema:
-            $ref: '#/definitions/ConflictDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -837,14 +747,12 @@ paths:
         - default: 1
           format: int32
           in: query
-          minimum: 1
           name: page
           required: false
           type: integer
         - default: 20
           format: int32
           in: query
-          minimum: 1
           name: pageSize
           required: false
           type: integer
@@ -867,16 +775,10 @@ paths:
             $ref: '#/definitions/NodePoolList'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
-        '401':
-          description: The request requires valid authentication credentials.
-          schema:
-            $ref: '#/definitions/UnauthorizedDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -910,24 +812,12 @@ paths:
             $ref: '#/definitions/NodePoolCreateResponse'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
-        '401':
-          description: The request requires valid authentication credentials.
-          schema:
-            $ref: '#/definitions/UnauthorizedDetails'
-        '404':
-          description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         '409':
           description: The request conflicts with the current state of the server.
-          schema:
-            $ref: '#/definitions/ConflictDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -1040,20 +930,12 @@ paths:
             $ref: '#/definitions/NodePool'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
-        '401':
-          description: The request requires valid authentication credentials.
-          schema:
-            $ref: '#/definitions/UnauthorizedDetails'
         '404':
           description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -1087,20 +969,10 @@ paths:
             $ref: '#/definitions/NodePool'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
-        '401':
-          description: The request requires valid authentication credentials.
-          schema:
-            $ref: '#/definitions/UnauthorizedDetails'
-        '404':
-          description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -1137,24 +1009,14 @@ paths:
             $ref: '#/definitions/NodePool'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
-        '401':
-          description: The request requires valid authentication credentials.
-          schema:
-            $ref: '#/definitions/UnauthorizedDetails'
         '404':
           description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         '409':
           description: The request conflicts with the current state of the server.
-          schema:
-            $ref: '#/definitions/ConflictDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -1180,14 +1042,12 @@ paths:
         - default: 1
           format: int32
           in: query
-          minimum: 1
           name: page
           required: false
           type: integer
         - default: 20
           format: int32
           in: query
-          minimum: 1
           name: pageSize
           required: false
           type: integer
@@ -1210,16 +1070,10 @@ paths:
             $ref: '#/definitions/NodePoolList'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
-        '401':
-          description: The request requires valid authentication credentials.
-          schema:
-            $ref: '#/definitions/UnauthorizedDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -1245,14 +1099,12 @@ paths:
         - default: 1
           format: int32
           in: query
-          minimum: 1
           name: page
           required: false
           type: integer
         - default: 20
           format: int32
           in: query
-          minimum: 1
           name: pageSize
           required: false
           type: integer
@@ -1275,12 +1127,10 @@ paths:
             $ref: '#/definitions/WifConfigList'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -1311,12 +1161,10 @@ paths:
             $ref: '#/definitions/WifConfig'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -1343,20 +1191,14 @@ paths:
             $ref: '#/definitions/WifConfig'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         '404':
           description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         '409':
           description: The request conflicts with the current state of the server.
-          schema:
-            $ref: '#/definitions/ConflictDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -1389,16 +1231,12 @@ paths:
             $ref: '#/definitions/WifConfig'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         '404':
           description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -1429,20 +1267,14 @@ paths:
             $ref: '#/definitions/WifConfig'
         '400':
           description: The server could not understand the request due to invalid syntax.
-          schema:
-            $ref: '#/definitions/BadRequestDetails'
         '404':
           description: The server cannot find the requested resource.
-          schema:
-            $ref: '#/definitions/NotFoundDetails'
         '409':
           description: The request conflicts with the current state of the server.
-          schema:
-            $ref: '#/definitions/ConflictDetails'
         default:
           description: An unexpected error response.
           schema:
-            $ref: '#/definitions/ProblemDetails'
+            $ref: '#/definitions/Error'
       security:
         - BearerAuth: []
       tags:
@@ -1484,19 +1316,6 @@ definitions:
         maximum: 100
         minimum: 1
         type: integer
-    type: object
-  BadRequestDetails:
-    allOf:
-      - $ref: '#/definitions/ProblemDetails'
-    example:
-      code: HYPERFLEET-VAL-001
-      detail: The cluster name field is required
-      instance: /api/hyperfleet/v1/clusters
-      status: 400
-      timestamp: '2024-01-15T10:30:00Z'
-      title: Validation Failed
-      trace_id: aabbccddeeff0011
-      type: 'https://api.hyperfleet.io/errors/validation-error'
     type: object
   BearerAuth:
     properties:
@@ -1635,6 +1454,8 @@ definitions:
         items:
           $ref: '#/definitions/Channel'
         type: array
+      kind:
+        type: string
       page:
         format: int32
         type: integer
@@ -1645,6 +1466,7 @@ definitions:
         format: int32
         type: integer
     required:
+      - kind
       - page
       - size
       - total
@@ -1880,6 +1702,8 @@ definitions:
         items:
           $ref: '#/definitions/Cluster'
         type: array
+      kind:
+        type: string
       page:
         format: int32
         type: integer
@@ -1890,6 +1714,7 @@ definitions:
         format: int32
         type: integer
     required:
+      - kind
       - page
       - size
       - total
@@ -2013,44 +1838,58 @@ definitions:
     required:
       - conditions
     type: object
-  ConflictDetails:
-    allOf:
-      - $ref: '#/definitions/ProblemDetails'
-    example:
-      code: HYPERFLEET-CNF-001
-      detail: This Cluster already exists
-      instance: /api/hyperfleet/v1/clusters
-      status: 409
-      timestamp: '2024-01-15T10:30:00Z'
-      title: Resource Conflict
-      trace_id: cafe0011aabb9988
-      type: 'https://api.hyperfleet.io/errors/resource-conflict'
-    type: object
   DNSSpec:
     properties:
       baseDomain:
         type: string
     type: object
-  ForbiddenDetails:
-    allOf:
-      - $ref: '#/definitions/ProblemDetails'
-    example:
-      code: HYPERFLEET-AUZ-001
-      detail: You do not have permission to perform this action
-      instance: /api/hyperfleet/v1/clusters
-      status: 403
-      timestamp: '2024-01-15T10:30:00Z'
-      title: Permission Denied
-      trace_id: 99aabbcc11223344
-      type: 'https://api.hyperfleet.io/errors/permission-denied'
-    type: object
-  ForbiddenResponse:
-    description: The client does not have permission to perform this action.
+  Error:
+    description: RFC 9457 Problem Details error format with HyperFleet extensions
     properties:
-      body:
-        $ref: '#/definitions/ForbiddenDetails'
+      code:
+        description: Machine-readable error code in HYPERFLEET-CAT-NUM format
+        example: HYPERFLEET-VAL-001
+        type: string
+      detail:
+        description: Human-readable explanation specific to this occurrence
+        example: The cluster name field is required
+        type: string
+      errors:
+        description: Field-level validation errors (for validation failures)
+        items:
+          $ref: '#/definitions/ValidationError'
+        type: array
+      instance:
+        description: URI reference for this specific occurrence
+        example: /api/hyperfleet/v1/clusters
+        format: uri-reference
+        type: string
+      status:
+        description: HTTP status code
+        example: 400
+        type: integer
+      timestamp:
+        description: RFC3339 timestamp of when the error occurred
+        example: '2024-01-15T10:30:00Z'
+        format: date-time
+        type: string
+      title:
+        description: Short human-readable summary of the problem
+        example: Validation Failed
+        type: string
+      trace_id:
+        description: Distributed trace ID for correlation
+        example: abc123def456
+        type: string
+      type:
+        description: URI reference identifying the problem type
+        example: 'https://api.hyperfleet.io/errors/validation-error'
+        format: uri
+        type: string
     required:
-      - body
+      - type
+      - title
+      - status
     type: object
   NetworkingSpec:
     properties:
@@ -2214,6 +2053,7 @@ definitions:
     type: object
   NodePoolCreateRequest:
     example:
+      kind: NodePool
       labels:
         environment: production
         pooltype: worker
@@ -2343,6 +2183,8 @@ definitions:
         items:
           $ref: '#/definitions/NodePool'
         type: array
+      kind:
+        type: string
       page:
         format: int32
         type: integer
@@ -2353,6 +2195,7 @@ definitions:
         format: int32
         type: integer
     required:
+      - kind
       - page
       - size
       - total
@@ -2478,19 +2321,6 @@ definitions:
     required:
       - conditions
     type: object
-  NotFoundDetails:
-    allOf:
-      - $ref: '#/definitions/ProblemDetails'
-    example:
-      code: HYPERFLEET-NTF-001
-      detail: Cluster with id='019466a0-8f8e-7abc-9def-0123456789ab' not found
-      instance: /api/hyperfleet/v1/clusters/019466a0-8f8e-7abc-9def-0123456789ab
-      status: 404
-      timestamp: '2024-01-15T10:30:00Z'
-      title: Resource Not Found
-      trace_id: deadbeef12345678
-      type: 'https://api.hyperfleet.io/errors/resource-not-found'
-    type: object
   ObjectReference:
     properties:
       href:
@@ -2508,55 +2338,6 @@ definitions:
       - asc
       - desc
     type: string
-  ProblemDetails:
-    description: RFC 9457 Problem Details for HTTP APIs
-    example:
-      code: HYPERFLEET-INT-001
-      detail: Unspecified error
-      instance: /api/hyperfleet/v1/clusters
-      status: 500
-      timestamp: '2024-01-15T10:30:00Z'
-      title: Internal Server Error
-      trace_id: f0f0f0f0a1a1a1a1
-      type: 'https://api.hyperfleet.io/errors/internal-error'
-    properties:
-      code:
-        description: Machine-readable error code in HYPERFLEET-CAT-NUM format
-        type: string
-      detail:
-        description: Human-readable explanation specific to this occurrence
-        type: string
-      errors:
-        description: Field-level validation errors (for validation failures)
-        items:
-          $ref: '#/definitions/ValidationError'
-        type: array
-      instance:
-        description: URI reference for this specific occurrence
-        format: uri-reference
-        type: string
-      status:
-        description: HTTP status code
-        type: integer
-      timestamp:
-        description: RFC3339 timestamp of when the error occurred
-        format: date-time
-        type: string
-      title:
-        description: Short human-readable summary of the problem
-        type: string
-      trace_id:
-        description: Distributed trace ID for correlation
-        type: string
-      type:
-        description: URI reference identifying the problem type
-        format: uri
-        type: string
-    required:
-      - type
-      - title
-      - status
-    type: object
   ReleaseSpec:
     properties:
       channelGroup:
@@ -2654,19 +2435,6 @@ definitions:
     required:
       - key
       - effect
-    type: object
-  UnauthorizedDetails:
-    allOf:
-      - $ref: '#/definitions/ProblemDetails'
-    example:
-      code: HYPERFLEET-AUT-001
-      detail: Account authentication could not be verified
-      instance: /api/hyperfleet/v1/clusters
-      status: 401
-      timestamp: '2024-01-15T10:30:00Z'
-      title: Authentication Required
-      trace_id: '1122334455667788'
-      type: 'https://api.hyperfleet.io/errors/authentication-required'
     type: object
   ValidationError:
     description: Field-level validation error detail
@@ -2830,6 +2598,8 @@ definitions:
         items:
           $ref: '#/definitions/Version'
         type: array
+      kind:
+        type: string
       page:
         format: int32
         type: integer
@@ -2840,6 +2610,7 @@ definitions:
         format: int32
         type: integer
     required:
+      - kind
       - page
       - size
       - total
@@ -3011,6 +2782,8 @@ definitions:
         items:
           $ref: '#/definitions/WifConfig'
         type: array
+      kind:
+        type: string
       page:
         format: int32
         type: integer
@@ -3021,6 +2794,7 @@ definitions:
         format: int32
         type: integer
     required:
+      - kind
       - page
       - size
       - total
@@ -3086,7 +2860,6 @@ x-components:
       default: 1
       format: int32
       in: query
-      minimum: 1
       name: page
       required: false
       type: integer
@@ -3094,7 +2867,6 @@ x-components:
       default: 20
       format: int32
       in: query
-      minimum: 1
       name: pageSize
       required: false
       type: integer

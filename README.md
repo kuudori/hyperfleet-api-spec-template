@@ -16,6 +16,16 @@ Besides the OpenAPI v3 version, a `swagger.yaml` is also created to offer v2 com
 
 Both will be created by executing the build script.
 
+## What you get
+
+Every provider spec repo created from this template starts with:
+
+- **Agent instructions** - `AGENTS.md` is the guidance for coding agents; `CLAUDE.md` imports it.
+- **Pre-commit hooks** (`.pre-commit-config.yaml`) - LeakTK secret scanning, HyperFleet commitlint, a schema build + Spectral lint hook that runs when a `.tsp` file changes, and trailing-whitespace / end-of-file fixers. Install once with `pre-commit install` (after `npm install`).
+- **Spectral rules** (`.spectral.yaml`) - `spectral:oas` plus the repo's component override; used by CI and the pre-commit hook.
+- **CI** (`.github/workflows/ci.yml`) - `npm ci`, schema build and drift check, Spectral lint at `--fail-severity warn`, and a version bump check.
+- **Release automation** (`.github/workflows/release.yml`) - tags the version from `main.tsp` and publishes the generated schemas.
+
 ## Repository Structure
 
 ```
